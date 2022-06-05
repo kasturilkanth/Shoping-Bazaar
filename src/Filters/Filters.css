@@ -1,0 +1,45 @@
+.box{
+    height: 1130px;
+    width: 300px;
+    border-left:1px solid rgb(204, 196, 196);
+    border-right:1px solid rgb(204, 196, 196);
+    border-top:1px solid rgb(204, 196, 196);
+    margin: 15px;
+    margin-top: 120px;
+    z-index:1;
+  }
+  .plus-size img{
+    border-top: 1px solid rgb(204, 196, 196);
+  border-bottom: 1px solid rgb(204, 196, 196);
+  cursor: pointer;
+  width: 300px;
+  height:60px ;
+  }
+  .color,.filter{
+    height: 60px;
+    width: 280px;
+    font-weight: bold;
+    display: flex;
+    justify-content:space-between; 
+    align-items: center;
+  border: 1px solid rgb(204, 196, 196);
+  cursor: pointer;
+  padding: 10px;
+  
+  }
+  .name{
+     font-weight: bold;
+  }
+  .appliedFiltes{
+    height: 150px;
+    width: 340px;
+    padding: 20px;
+    
+  }
+  .clearall{
+    background-color: red;
+    height:40px;
+    width:100px;
+    border-radius: 3px;
+    cursor: pointer;
+  }

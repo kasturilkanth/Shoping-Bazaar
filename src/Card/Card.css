@@ -1,0 +1,79 @@
+.card{
+    cursor: pointer;
+    padding: 10px;
+    /* background-color: aquamarine; */
+    margin-top: 110px;
+   width: 300px;
+  height: 700px;
+
+}
+.img{
+    width: 300px;
+    height: 380px;
+    cursor: pointer;
+
+}
+.detail{
+    cursor: pointer;
+   position:relative;
+   width: 260px;
+   height: 20px;
+   background-color: lightblue;
+   color: black;
+   text-align: center;
+   padding: 20px;
+   display: flex;
+   justify-content: center;
+ align-items: center;
+margin-top: -55px;
+z-index: 1;
+}
+.heart{
+
+  margin-top: -380px;
+  margin-left: 20px;
+  font-size: 30px;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name{
+  margin-top: 360px;
+ text-align: center;
+}
+.price-display{
+text-align: center;
+}
+.card:hover{
+  border: 1px solid rgb(204, 196, 196);
+}
+.add-btn{
+    width:250px;
+    height:60px;
+    background-color: lightblue;
+    border:none;
+    color:black;
+    margin-left:30px;
+    font-size:20px;
+}
+.add-btn:hover{
+   cursor:pointer;
+}
+.discount{
+  /* position:relative; */
+  margin-left:50px;
+  width:200px;
+  height:60px;
+  color:red;
+  /* background-color:red; */
+  border-radius:50%;
+ /* padding:10px; */
+
+  text-align:center;
+  /* background-image: url("https://thumbs.dreamstime.com/z/cool-vector-discount-icon-tag-3422270.jpg"); */
+}
