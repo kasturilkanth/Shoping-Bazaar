@@ -1,8 +1,10 @@
 
 import {useEffect,useState} from "react";
 import CardList from "./Card/CardList";
-import Header from "./Header/Header";
+import Header from "./Header/Header.js";
 import Filters from "./Filters/Filters";
+import Category from "./Category/Category.js";
+
 
 function App() {
   const[product,setProduct]=useState([]);
@@ -35,7 +37,7 @@ const clearFilter=()=>{
 //to add the selected values to the filter session
 const filterString=(obj)=>{
   const array=Object.keys(obj);
-  console.log(array)
+  // console.log(array)
   let string="";
   //here array1 is used for showing applied filters
   let array1=[];
@@ -84,6 +86,7 @@ const filterString=(obj)=>{
   })
   //passing array1 values and changing appliedfilters
   setAppliedFilters(array1)
+  // console.log(array1)
   //remove last character from string
   return(string.slice(0,string.length-1))
 }
@@ -123,7 +126,7 @@ const searchvaluefunc=(e)=>{
     const exist = cartItem.find((x)=> x.id === item.id)
     if(exist){
       setCartItem(cartItem.map((x)=>{
-       return x.id === item.id ? {...exist} : x
+       return x.id === item.id ? {...exist,qty:1} : x
       }))
     }else {
       setCartItem([...cartItem, {...item}]
@@ -161,13 +164,19 @@ const searchvaluefunc=(e)=>{
 })
     
   },[mainState,filter])
-  
+  const [clicked,setClicked]=useState([])
+  console.log(clicked)
+  const handleClicked=(item)=>{
+      // setClicked((prev)=>prev + item)
+      setClicked(item)
+  }
   return <>
 
 <Header value={value} cartItem={cartItem} onAdd={onAdd} onRemove={onRemove} searchvaluefunc={searchvaluefunc}/>
 <div style={{display:'flex'}}>
-<Filters product={product} setMainState={setMainState} appliedFilters={appliedFilters} clearFilter={clearFilter} />
-<CardList product={filteredCards} handleAddtocart={handleAddtocart}/>
+{/* <Filters product={product} setMainState={setMainState} appliedFilters={appliedFilters} clearFilter={clearFilter} /> */}
+<Category product={product} handleClicked={handleClicked}/>
+<CardList product={filteredCards} handleAddtocart={handleAddtocart} clicked={clicked}/>
 </div>
   </>
 }
